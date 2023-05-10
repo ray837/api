@@ -2,9 +2,13 @@
 
 // [START gae_node_request_example]
 const express = require('express');
-
+const cors = require('cors');
+app.use(cors());
+app.use(cors({
+    origin: '*'
+  }));
+  
 const app = express();
-
  
 const transactions = {};
 
@@ -15,7 +19,7 @@ const stat=req.params.con;
 
     if (true) {
 
-        transactions[transactionId] = { status: "success"};
+        transactions[transactionId] = { status: "sucess"};
 
 
         res.status(200).send('Transaction received successfully.');
