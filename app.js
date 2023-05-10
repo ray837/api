@@ -16,11 +16,10 @@ const transactions = {};
  
 app.post('/transactions/:id', (req, res) => {
     const transactionId = req.params.id;
-const stat=req.params.con;
 
     if (true) {
 
-        transactions[transactionId] = { status: "sucess"};
+        transactions[transactionId] = { status: "success"};
 
 
         res.status(200).send('Transaction received successfully.');
@@ -36,6 +35,7 @@ app.get('/transactions/:id', (req, res) => {
 
 
     if (transactions[transactionId]) {
+  
         if (transactions[transactionId].status == 'success') {
 
             res.status(200).send(transactions[transactionId].status);
